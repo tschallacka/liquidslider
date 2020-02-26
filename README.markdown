@@ -5,37 +5,40 @@
 Originally this plugin was developed by Kevin Batdorf and he may be still working on it, 
 Visit his github to see the original projec this one is based upon: https://github.com/KevinBatdorf/liquidslider
 
-I decided to rewrite this plugin to become more node compatible because I was in need with a more memory conservative approach to this item.
+I decided to rewrite this plugin to become more node compatible because I was in need with a more memory conservative approach to this item. 
 And since I kinda need this project now I published it under my own namespace.
 
 There's a lot of the original repository in here still, and the old liquidSlider is still here.
-It is considered in my repository as legacy, and will not be updated.
-
-
+It is considered in my repository as legacy, and will not be updated, nor will I provide support for who uses it.
+It's only here for those who halfway upgrade to npm and can't for reasons update their code to use the npm version
+This plugin is written to be included in an index.js which is then compiled in the big javascript file served to the browser. There are no individual files to include except the legacy files(not recommended)
 
 [Example Page (Advanced)](/examples/page1.npm.html)
 
-I'm on Twitter: [@Tschallacka](http://twitter.com/#!/tschallacka) and have a personal website [tschallacka.de](https://www.tschallacka.de)
+I'm on Twitter: [@Tschallacka](http://twitter.com/#!/tschallacka) and have a personal website [tschallacka.de](https://www.tschallacka.de), have an [imgur](https://imgur.com/user/tschallacka), [stackoverflow](https://stackoverflow.com/users/1356107/tschallacka), [reddit](http://reddit.com/u/tschallacka), [royalroad](https://www.royalroad.com/profile/94454) account. So enough ways to get in touch with me, it may even be a safe bet to assume that anyone you encounter with this username may be me. My email is tschallacka [a]t outlook d[ot] com.
 
 ## Installation
 
 ### NPM
 ```bash
-How to install: npm -i @tschallacka/liquidslider
+npm -i @tschallacka/liquidslider
 ```
 
-then in your js file add
+Then in your js file add
 ```js
 let LiquidSlider = require('@tschallacka/liquidslider')
 ```
 
 The stylesheet is plain css, but you can load it in with sass
 ```scss
-@import "node_modules/@tschallacka/liquidslider/css/liquid-slider";
+@import "node_modules/@tschallacka/liquidslider/css/liquid-slider.css";
 ```
 
 ## How to use
 Structure your html in a manner similar to below:
+One wrapper div.  
+Several segment div to reprensent the indivdual slides.  
+.title class marked titles for evental "tab" contents if you want navigation tabs.  
 
 ```html
 <section class="liquid-slider" id="main-slider">
@@ -54,7 +57,7 @@ Structure your html in a manner similar to below:
 
 ```javascript
 let slider = document.getElementById('main-slider'),
-    LiquidSlider = require('liquid-slider'),
+    LiquidSlider = require('@tschallacka/liquidslider'),
     mySliderInstance = new LiquidSlider(slider);
   
 ```
@@ -78,7 +81,6 @@ If you would like to edit a setting, do so like this:
     setting: value,
     setting: value
   });
-});
 ```
 or
 ```javascript
@@ -89,7 +91,13 @@ or
 ```
 Or via data attributes(replace uppercase letters with a lowercase letter preceeded by a dash and preceed it all with `data-`. For example `autoHeight: true` becomes `data-auto-height="true"`)
 ```html
-<section class="liquid-slider" id="main-slider" data-liquid-slider data-auto-height="false" data-slide-ease-function="animate.css" data-animate-in="rollIn" data-animate-out="rollOut">
+<section class="liquid-slider" 
+         id="main-slider" 
+         data-liquid-slider 
+         data-auto-height="false" 
+         data-slide-ease-function="animate.css" 
+         data-animate-in="rollIn" 
+         data-animate-out="rollOut">
 ```
 Default Settings
 ----------------
