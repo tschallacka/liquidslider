@@ -2,53 +2,38 @@
 
 ## A Responsive jQuery HTML Content Slider
 
-[Demo Page](http://kevinbatdorf.github.io/liquidslider) | [Example Page (Advanced)](http://kevinbatdorf.github.io/liquidslider/examples/page1.html)
+Originally this plugin was developed by Kevin Batdorf and he may be still working on it, 
+Visit his github to see the original projec this one is based upon: https://github.com/KevinBatdorf/liquidslider
 
-I'm on Twitter: [@Kevin Batdorf](http://twitter.com/#!/kevinbatdorf)
+I decided to rewrite this plugin to become more node compatible because I was in need with a more memory conservative approach to this item.
+And since I kinda need this project now I published it under my own namespace.
 
-## Update
-I'm going to make this compatible with NPM soon, but for now there's a work around.
-Two issues:
+There's a lot of the original repository in here still, and the old liquidSlider is still here.
+It is considered in my repository as legacy, and will not be updated.
 
-1) You still need to load in the dependencies on your own
-2) the asset files wil have to be manually moved, or overridden in your own css
 
+
+[Example Page (Advanced)](/examples/page1.npm.html)
+
+I'm on Twitter: [@Tschallacka](http://twitter.com/#!/tschallacka) and have a personal website [tschallacka.de](https://www.tschallacka.de)
 
 ## Installation
 
 ### NPM
 ```bash
-npm install --save git+https://git@github.com/KevinBatdorf/liquidslider.git
+How to install: npm -i @tschallacka/liquidslider
 ```
 
 then in your js file add
 ```js
-import 'liquidslider/js/jquery.liquid-slider.min.js'
+let LiquidSlider = require('@tschallacka/liquidslider')
 ```
 
 The stylesheet is plain css, but you can load it in with sass
 ```scss
-@import "node_modules/liquidslider/css/liquid-slider";
+@import "node_modules/@tschallacka/liquidslider/css/liquid-slider";
 ```
 
-### The manual way:
-
-1. [Download](https://github.com/KevinBatdorf/liquidslider/zipball/master) the files to your working directory.
-2. Link files in the header and footer.
-
-```html
-<head>
-  <link rel="stylesheet" href="./dist/css/liquid-slider.css">
-</head>
-<body>
-  <footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
-    <script src="./dist/js/jquery.liquid-slider.min.js"></script>
-  </footer>
-</body>
-```
 ## How to use
 Structure your html in a manner similar to below:
 
@@ -65,25 +50,47 @@ Structure your html in a manner similar to below:
 </section>
 ```
 
-4. Initialize the content slider somewhere after the script.
+4. Initialize the content slider 
 
 ```javascript
-jQuery(function($) {
-  $('#main-slider').liquidSlider();
-});
+let slider = document.getElementById('main-slider'),
+    LiquidSlider = require('liquid-slider'),
+    mySliderInstance = new LiquidSlider(slider);
+  
 ```
+or
+```javascript
+$('#main-slider').liquidSlider();
+```
+or by adding `data-liquid-slider` to the wrapping `.liquid-slider` div.
 
+```html
+<section class="liquid-slider" id="main-slider" data-liquid-slider>
+```
+This however requires you to trigger the `render` event on the document
+```javascript
+$(document).trigger('render');
+```
 If you would like to edit a setting, do so like this:
 
 ```javascript
-jQuery(function($) {
   $('#main-slider').liquidSlider({
     setting: value,
     setting: value
   });
 });
 ```
-
+or
+```javascript
+  let mySliderInstance = new LiquidSlider(slider, {
+    setting: value,
+    setting: value
+  });
+```
+Or via data attributes(replace uppercase letters with a lowercase letter preceeded by a dash and preceed it all with `data-`. For example `autoHeight: true` becomes `data-auto-height="true"`)
+```html
+<section class="liquid-slider" id="main-slider" data-liquid-slider data-auto-height="false" data-slide-ease-function="animate.css" data-animate-in="rollIn" data-animate-out="rollOut">
+```
 Default Settings
 ----------------
 
@@ -164,6 +171,9 @@ swipeArgs: undefined
 
 Versions
 --------
+Version 3.0.0
+- Update to NPM compatible version
+- Please read the page3.npm.html for added functionality.
 
 Version 2.3.8
 - Fixes bug with text arrows and no mobile nav

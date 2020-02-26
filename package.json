@@ -1,7 +1,7 @@
 {
-  "name": "liquidslider",
-  "version": "2.3.12",
-  "description": "A Responsive Content Slider",
+  "name": "@tschallacka/liquidslider",
+  "version": "3.0.00",
+  "description": "A node compatible Responsive Content Slider",
   "main": "./src/js/jquery.liquidslider.npm.js",
   "directories": {
     "example": "examples"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KevinBatdorf/liquidslider.git"
+    "url": "https://github.com/tschallacka/liquidslider.git"
   },
   "keywords": [
     "ui",
@@ -22,19 +22,18 @@
     "mobile",
     "tabs"
   ],
-  "author": "Kevin Batdorf",
+  "author": "Tschallacka",
   "contributors": [
     {
-      "name": "Tschallacka",
-      "email": "tschallacka@outlook.com",
-      "url": "https://www.tschallacka.de"
+      "name": "Kevin Batdorf",
+      "url": "https://liquidslider.com"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KevinBatdorf/liquidslider/issues"
+    "url": "https://github.com/tschallacka/liquidslider/issues"
   },
-  "homepage": "https://liquidslider.com",
+  "homepage": "https://www.tschallacka.de",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-transform-arrow-functions": "^7.8.3",
