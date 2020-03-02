@@ -121,7 +121,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let slider9 = document.getElementById('slider-9');
   if(slider9) {
-    let LiquidSlider = require('liquid-slider'),
+    let LiquidSlider = require('@tschallacka/liquidslider'),
       slider_nine = new LiquidSlider(slider9, {
       autoHeight:true,
       slideEaseFunction:'animate.css',
@@ -397,7 +397,7 @@ if(array_key_exists('x-october-request-handler', $headers)
     <p>
         When you initialize the LiquidSlider from your NodeJS application, you have direct access to the instance.<BR/>
         Just keep it around until you don't need it anymore.
-<pre class="line-numbers language-javascript"><code>let LiquidSlider = require('liquid-slider'),
+<pre class="line-numbers language-javascript"><code>let LiquidSlider = require('@tschallacka/liquidslider'),
 // hang on to my_slider
 my_slider = new LiquidSlider(element, {
   autoHeight:true,
