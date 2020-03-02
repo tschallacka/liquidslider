@@ -55,6 +55,7 @@
           <li><a href="#alternative-navigation">Ajax, but different</a></li>
           <li><a href="#binding-to-jquery">Binding to a second jQuery instance</a></li>
           <li><a href="#access-the-instance">Accessing the instance</a></li>
+          <li><a href="#changing-the-easing">Changing the easing</a></li>
       </ul>
     </div>
     
@@ -67,7 +68,8 @@
       <a href="https://www.tschallacka.de" style="float: left;margin-right:10px;">
         <img src="./assets/tschallacka.png" style="width: 100px;height:auto;">
       </a>
-      Hey there. This part isn't written by Kevin, but by me, Tschallacka.<BR/>
+      Hey there. This part isn't written by Kevin, but by me, Tschallacka. I'm slowly updating the documentation to 
+      bring it up to date, but there's a lot of old stuff here still.<BR/>
       I've invested some time to upgrade this library to NodeJS because I was encountering some
       issues with the original script within my node application.<BR/>
       This part doesn't cover the "vanilla" uses the original documentation covers
@@ -395,6 +397,118 @@ let liquidSlider = $slider.data('liquidSlider');
       When you initialized the LiquidSlider via the data attributes api and triggered the <code class="language-javascript">'render'</code> event, you can 
       access the liquid slider also in the <code class="language-javascript">'oc.LiquidSlider'</code> jQuery data value.
     </p>
+</div>
+<div id="changing-the-easing">
+    <h2>Changing the easing<a href="#changing-the-easing">#</a></h2>
+    <p>
+        For the timing of the sliders there are several easing methods that are used to control the animation added by default you can access to
+        give your slides a nice swing
+        <pre class="line-numbers language-javascript"><code>{
+    easeOutCubic: 'cubic-bezier(.215,.61,.355,1)',
+    easeInOutCubic: 'cubic-bezier(.645,.045,.355,1)',
+    easeInCirc: 'cubic-bezier(.6,.04,.98,.335)',
+    easeOutCirc: 'cubic-bezier(.075,.82,.165,1)',
+    easeInOutCirc: 'cubic-bezier(.785,.135,.15,.86)',
+    easeInExpo: 'cubic-bezier(.95,.05,.795,.035)',
+    easeOutExpo: 'cubic-bezier(.19,1,.22,1)',
+    easeInOutExpo: 'cubic-bezier(1,0,0,1)',
+    easeInQuad: 'cubic-bezier(.55,.085,.68,.53)',
+    easeOutQuad: 'cubic-bezier(.25,.46,.45,.94)',
+    easeInOutQuad: 'cubic-bezier(.455,.03,.515,.955)',
+    easeInQuart: 'cubic-bezier(.895,.03,.685,.22)',
+    easeOutQuart: 'cubic-bezier(.165,.84,.44,1)',
+    easeInOutQuart: 'cubic-bezier(.77,0,.175,1)',
+    easeInQuint: 'cubic-bezier(.755,.05,.855,.06)',
+    easeOutQuint: 'cubic-bezier(.23,1,.32,1)',
+    easeInOutQuint: 'cubic-bezier(.86,0,.07,1)',
+    easeInSine: 'cubic-bezier(.47,0,.745,.715)',
+    easeOutSine: 'cubic-bezier(.39,.575,.565,1)',
+    easeInOutSine: 'cubic-bezier(.445,.05,.55,.95)',
+    easeInBack: 'cubic-bezier(.6,-.28,.735,.045)',
+    easeOutBack: 'cubic-bezier(.175,.885,.32,1.275)',
+    easeInOutBack: 'cubic-bezier(.68,-.55,.265,1.55)'
+}
+</code></pre>
+        <div id="slider-easing">
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non auctor purus. Praesent laoreet tortor tempus lectus fringilla ultricies. Aliquam fringilla vestibulum arcu, a commodo dolor eleifend et. Suspendisse blandit aliquet lorem, sed egestas ante malesuada eget. Ut iaculis volutpat lorem, semper sagittis purus luctus sit amet. Ut sit amet feugiat mauris, eget aliquam nibh. Nulla porta tortor sed justo lobortis, ut varius sem consequat. Morbi laoreet sed arcu eget pharetra. Donec ultricies neque dui, at tincidunt massa aliquet in.
+            </div>
+            <div>
+                In quis faucibus sem. Quisque semper pellentesque justo, id consequat leo. Praesent non viverra diam. Pellentesque ullamcorper sem in cursus dapibus. Nam lacinia lacus ac fringilla laoreet. Fusce faucibus enim sed purus fermentum finibus. Vestibulum vitae dignissim dolor. Morbi varius tortor ut dui molestie tempor. Mauris eu viverra est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget sem interdum, placerat metus aliquet, dignissim orci. Pellentesque pulvinar mollis purus nec eleifend.
+            </div>
+            <div>
+                In ut ullamcorper arcu, in gravida tortor. Ut fringilla porttitor turpis, vitae tincidunt tortor convallis eu. Fusce scelerisque elit vehicula augue placerat maximus ac ut urna. Donec tincidunt vestibulum diam. Aliquam rutrum semper eros. In sem metus, euismod a velit sed, scelerisque feugiat elit. Praesent non risus efficitur, iaculis massa ut, mollis metus. Suspendisse ut fermentum est, a pharetra ex.
+            </div>
+            <div>
+                Morbi posuere enim pulvinar magna malesuada sagittis. Vestibulum sed metus id ante convallis commodo in sed arcu. Morbi a neque id sem tempus semper. Donec dignissim lobortis erat eu efficitur. Nunc quis justo eget nulla rutrum gravida eu in elit. Pellentesque dui metus, dapibus ac quam sed, luctus mattis leo. Integer eu lorem tristique, imperdiet nunc sit amet, scelerisque justo. Phasellus non ante eu leo semper commodo. Integer posuere nibh vitae condimentum fermentum. Nullam et tristique nunc, ac fermentum nisl. Sed sollicitudin id elit at sagittis. Maecenas tincidunt risus quis dui sollicitudin, a vehicula lectus rhoncus. Quisque porta sem pellentesque metus gravida posuere.
+            </div>
+            <div>
+                Curabitur dapibus a diam ut feugiat. Nullam varius ligula sit amet ante consectetur, congue venenatis mi vehicula. Vivamus mollis pretium lectus, sed fringilla lacus feugiat quis. Nam aliquet in enim ut fermentum. Praesent vitae mollis nisl, sit amet ornare lectus. Maecenas aliquet, metus ac convallis lacinia, nisl purus convallis nibh, a placerat mi tortor eget massa. Phasellus ligula augue, vulputate et orci non, finibus semper turpis. Ut in volutpat nunc. Sed elementum, mauris eget aliquam consequat, enim est efficitur augue, non porttitor nulla nisi id sem. In sit amet ullamcorper libero. Vivamus fermentum dapibus odio vitae consectetur. Donec tempor, nulla ut dapibus malesuada, quam dui dignissim diam, a pellentesque arcu lacus at justo.
+            </div>
+        </div>
+        <div class="default-easings">
+            <button class="pure-button pure-button-primary">easeOutCubic</button>
+            <button class="pure-button">easeInOutCubic</button>
+            <button class="pure-button">easeInCirc</button>
+            <button class="pure-button">easeOutCirc</button>
+            <button class="pure-button">easeInExpo</button>
+            <button class="pure-button">easeOutExpo</button>
+            <button class="pure-button">easeInOutExpo</button>
+            <button class="pure-button">easeInQuad</button>
+            <button class="pure-button">easeOutQuad</button>
+            <button class="pure-button">easeInOutQuad</button>
+            <button class="pure-button">easeInQuart</button>
+            <button class="pure-button">easeOutQuart</button>
+            <button class="pure-button">easeInOutQuart</button>
+            <button class="pure-button">easeInQuint</button>
+            <button class="pure-button">easeOutQuint</button>
+            <button class="pure-button">easeInOutQuint</button>
+            <button class="pure-button">easeInSine</button>
+            <button class="pure-button">easeOutSine</button>
+            <button class="pure-button">easeInOutSine</button>
+            <button class="pure-button">easeInBack</button>
+            <button class="pure-button">easeOutBack</button>
+            <button class="pure-button">easeInOutBack</button>
+            <hr>
+            <button class="pure-button pure-button-secondary">popGoesTheWeasel</button>
+        </div>
+        In this example a new default easing was added, that can be used by any liquid slider that is instantiated after the default was set.
+        <pre class="line-numbers language-javascript"><code>let LiquidSlider = require('@tschallacka/liquidslider');
+LiquidSlider.EASING_FUNCTIONS['popGoesTheWeasel'] = 'cubic-bezier(1, -0.5, 0, 1.64)';
+let ls = new LiquidSlider($('#slider-easing'), {
+    slideEaseFunction: 'popGoesTheWeasel',  
+});
+</code></pre>
+        <p>
+            Now if you want a custom easing, just to that slider instance you currently have, you can access the current instances easing methods via 
+            <code class="language-javascript">instance.easing</code>. The moment the slider is instantiated, 
+        </p>
+        <p>
+            <strong>it will not use any easing methods added to the default table afterwards</strong>.
+        </p>
+        <p>
+            <strong style="color:red">This code will not work</strong> because the default popGoesTheWeasel was added after instantiation.
+        </p>
+        <pre class="line-numbers language-javascript"><code>let LiquidSlider = require('@tschallacka/liquidslider');
+let ls = new LiquidSlider("#mySlider");
+LiquidSlider.EASING_FUNCTIONS['popGoesTheWeasel'] = 'cubic-bezier(1,-0.5,0,1.64)';
+ls.options.slideEaseFunction = 'popGoesTheWeasel';</code></pre>
+        <p>
+            Now if you want to modify the easing behaviour of instantiated liquid sliders, you need to use <code class="language-javascript">instance.easing</code>. 
+        </p>
+        <p>
+            The below code adds a new easing the the above slider instance wit this button <button id="dynamic_change_easing" class="pure-button pure-button-secondary">add easing</button>
+        </p>
+        <pre class="line-numbers language-javascript"><code>$('#dynamic_change_easing').on('click', (e) => {
+    if(!ls.easing['waitForIt']) {
+        ls.easing['waitForIt'] = 'cubic-bezier(1,.02,1,-0.16)';
+    }
+    ls.options.slideEaseFunction = 'waitForIt';   
+});</code></pre>
+    <p>
+        As you can also see in the code example above, the method of changing the current easing method is <code class="language-javascript">ls.options.slideEaseFunction = 'easingMethodNameHere';</code>
+    </p>
+    
 </div>
 
 </div> <!-- End of container -->

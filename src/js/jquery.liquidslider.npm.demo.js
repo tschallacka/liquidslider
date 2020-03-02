@@ -47,5 +47,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
+  LiquidSlider.EASING_FUNCTIONS['popGoesTheWeasel'] = 'cubic-bezier(1,-0.5,0,1.64)';
+  let $easing = $('#easingExample');
+  if($easing.length > 0) {
+    let ls = new LiquidSlider($easing, {
+        slideEaseFunction: 'popGoesTheWeasel'
+    });
+    $('#change_easing').on('click', () => {
+       ls.easing['waitForIt'] = 'cubic-bezier(1,.02,1,-0.16)';
+       ls.options.slideEaseFunction = 'waitForIt';     
+    });
+  } 
+  
+  let $easing_demo = $('#changing-the-easing');
+  if($easing_demo.length > 0) {
+      let ls = new LiquidSlider($easing_demo.find('#slider-easing'), {
+        slideEaseFunction: 'easeOutCubic',  
+      });
+      let $button_wrap = $easing_demo.find(".default-easings");
+      let $buttons = $button_wrap.find('.pure-button');
+      $button_wrap.on('click','.pure-button', (e) => {
+          let $target = $(e.currentTarget);
+          $buttons.removeClass('pure-button-primary');
+          $target.addClass('pure-button-primary');
+          ls.options.slideEaseFunction = $target.text();
+      });
+      $easing_demo.find('#dynamic_change_easing').on('click', (e) => {
+        if(!ls.easing['waitForIt']) {
+            ls.easing['waitForIt'] = 'cubic-bezier(1,.02,1,-0.16)';
+        }
+        ls.options.slideEaseFunction = 'waitForIt';   
+      });
+  }
+  
   $(document).trigger('render');
 });

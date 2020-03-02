@@ -1,0 +1,208 @@
+/*
+ *  Liquid Slider v3 Less file
+ *  Copyright 2020 Tschallacka
+ *  http://liquidslider.com
+ *  MIT license
+ */
+
+.no-js .liquid-slider {
+  height:350px;
+  overflow:scroll;
+}
+.ls-wrapper {
+    clear: both;
+    overflow: auto;
+    position: relative;
+    
+    .ls-nav {
+        overflow:hidden;
+        clear:both;
+        a {
+            background: #d8d8d8;
+            color: #333333;
+            margin-right: 1px;
+            padding: 10px 15px;  
+            outline:0;
+            &:hover {
+                background: #f2f2f2;
+                color: #333333;
+                text-shadow: none;
+            }
+        }
+        .current  {
+            a {
+                background: #f2f2f2;
+            }        
+        }
+        
+        .currentCrossLink {
+            font-weight: bold;
+        }
+        
+        ul {  
+            padding:0;
+            clear: both;
+            display: block;
+            margin: auto;
+            overflow: hidden;
+            li {
+                display: inline;
+                a {
+                    display: block;
+                    float: left;
+                    text-decoration: none;
+                }
+            }
+        }
+        .ls-select-box { 
+            width: 100%;
+            height: 35px;
+            overflow: hidden;
+            background: url(../images/menu.png) no-repeat right #ddd;
+            select {  
+                width: 150%;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance:none;
+                background: transparent;
+                padding: 5px;
+                font-size: 110%;
+                border: none;
+                height: 35px;
+                cursor:pointer;
+                outline: 0;
+            }
+        }
+    }
+    
+    .liquid-slider {
+        
+        background: #f2f2f2;
+        width: 600px;
+        max-width: 100%;
+        margin: 0 auto;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        
+        &, 
+        & > .panel-container  {
+            will-change: transform, transition;
+        }
+        .ls-panel {  
+           width: 600px;
+           display: block;
+           float: left;
+           
+           .panel-wrapper {  
+              padding: 15px 40px;
+              position:relative;
+            }
+        }
+        
+        .panel-container {
+           position: relative;
+           -webkit-backface-visibility: hidden;
+           -webkit-perspective: 1000;
+           /* from http://davidwalsh.name/translate3d */
+           .fade {
+              width:100%;
+              opacity: 0;
+              position: absolute;
+              top: 0; 
+              left: 0;
+              display: block;
+            }
+        }
+        
+        &.ls-mobile {
+            width:100%;
+        }
+        
+        .arrows& {
+            /* Margin between slider and arrows */
+            margin: 0 10px;
+        }
+        
+        .ls-responsive& {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    
+    .ls-preloader {  
+        background: url(../images/loading.gif) #f2f2f2 no-repeat center 50%;
+        opacity:1;
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:2;
+    }
+    
+    .ls-nav-left, 
+    .ls-nav-right {
+        top:0;
+        float: left;
+        clear:both;
+        a {
+            background: #000;
+            color: #fff;
+            padding: 5px;
+            width: 100px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            .ls-responsive& {
+                background: #9A9A9A;
+                width: 80px;
+                &:hover {
+                    background: #747474;
+                }
+            }
+        }
+        .ls-responsive& {
+            position: absolute;
+            left: 0;
+            z-index: 2;
+            
+        }
+    }
+    .ls-nav-left-arrow, 
+    .ls-nav-right-arrow {
+        cursor: pointer;
+        float: left;
+        clear: both;
+        width: 25px;
+        height: 25px;
+        background-image: url(../images/arrow.png);
+        background-repeat: no-repeat;
+        margin-top: 50px;
+        z-index: 2;
+        position:relative;
+        a {
+            display: block;
+        }
+        .ls-responsive& {
+            position: absolute;
+        }
+    }
+    .ls-nav-right-arrow {
+        background-position: top right;  
+        margin-right: 5px;
+        position: absolute;
+        right: 0;
+        &:hover {
+            background-position: bottom right;
+        }
+    }
+    .ls-nav-left-arrow {
+        background-position: top left;  
+        margin-left: 5px;
+        left: 0;
+        &:hover {
+            background-position: bottom left;
+        }
+    }
+}

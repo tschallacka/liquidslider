@@ -29,16 +29,33 @@ Then in your js file add
 let LiquidSlider = require('@tschallacka/liquidslider')
 ```
 
-The stylesheet is plain css, but you can load it in with sass
+The stylesheet is developed in less and can be found in `src/less/liquid-slider.less`  
+Compiled versions can be found in the css directory.   
+The legacy marked file is the css file as provided originally by Kevin Batdorf.
+
+To load the stylesheet with less:
+```less
+@import "node_modules/@tschallacka/liquidslider/src/less/liquid-slider.less";
+```
+
+To load the stylesheet with sass:
 ```scss
 @import "node_modules/@tschallacka/liquidslider/css/liquid-slider.css";
 ```
 
+To load it directly in your html:
+```html
+<link rel="stylesheet" href="node_modules/@tschallacka/liquidslider/css/liquid-slider.css">
+```
+
 ## How to use
-Structure your html in a manner similar to below:
-One wrapper div.  
-Several segment div to reprensent the indivdual slides.  
-.title class marked titles for evental "tab" contents if you want navigation tabs.  
+
+### HTML Structure
+Structure your HTML in a manner similar to below:
+
+- One wrapper div.  
+- Several segment div to reprensent the indivdual slides.  
+- .title class marked titles for evental "tab" contents if you want navigation tabs.  
 
 ```html
 <section class="liquid-slider" id="main-slider">
@@ -53,27 +70,32 @@ Several segment div to reprensent the indivdual slides.
 </section>
 ```
 
-4. Initialize the content slider 
+### Initialize the content slider 
 
 ```javascript
 let slider = document.getElementById('main-slider'),
     LiquidSlider = require('@tschallacka/liquidslider'),
     mySliderInstance = new LiquidSlider(slider);
-  
 ```
+
 or
+
 ```javascript
 $('#main-slider').liquidSlider();
 ```
+
 or by adding `data-liquid-slider` to the wrapping `.liquid-slider` div.
 
 ```html
 <section class="liquid-slider" id="main-slider" data-liquid-slider>
 ```
-This however requires you to trigger the `render` event on the document
+
+This however requires you to trigger the `render` event on the document, on page load.
+
 ```javascript
 $(document).trigger('render');
 ```
+
 If you would like to edit a setting, do so like this:
 
 ```javascript
@@ -82,14 +104,18 @@ If you would like to edit a setting, do so like this:
     setting: value
   });
 ```
+
 or
+
 ```javascript
   let mySliderInstance = new LiquidSlider(slider, {
     setting: value,
     setting: value
   });
 ```
+
 Or via data attributes(replace uppercase letters with a lowercase letter preceeded by a dash and preceed it all with `data-`. For example `autoHeight: true` becomes `data-auto-height="true"`)
+
 ```html
 <section class="liquid-slider" 
          id="main-slider" 
@@ -99,14 +125,80 @@ Or via data attributes(replace uppercase letters with a lowercase letter preceed
          data-animate-in="rollIn" 
          data-animate-out="rollOut">
 ```
-Default Settings
-----------------
+
+### Destroy the slider
+
+This version of liquid slider allows itself to be destroyed. For working examples please see page3.npm.html in the examples directory.
+
+For destroying the liquid slider via an instance reference you need to invoke `sysDestroy()` **NOT** `destroy()`
+```javascript
+    let mySliderInstance = new LiquidSlider(slider, {
+    setting: value,
+    setting: value
+  });
+  mySliderInstance.sysDestroy()
+```
+
+You can also trigger the `'dispose-control'` event. It's best to use `triggerHandler`, if your slider is wrapped in another
+october foundation framework handler it would bubble up if you use `trigger` destroying the elements wrapping your slider.
 
 ```javascript
-autoHeight: true,
-minHeight: 0,
-heightEaseDuration: 1500,
-heightEaseFunction: 'easeInOutExpo',
+   $('some selector for the liquid slider here').triggerHandler('dispose-control');
+```
+
+## Default Settings
+----------------
+### Easing functions
+You can add more easing functions by adding it to `LiquidSlider.EASING_FUNCTIONS['YourEasingName'] = 'your-definition';`, 
+or if you have an instance to `myLiquidSlider.easing['YourEasingName'] = 'your-definition';` to limit that easing function to that instance.
+
+```javascript
+    let LiquidSlider = require('@tschallacka/liquidslider');
+    
+    // Available to all new LiquidSliders instances, not the already instantiated ones.
+    LiquidSlider.EASING_FUNCTIONS['popGoesTheWeasel'] = 'cubic-bezier(1,-0.5,0,1.64)';
+    let ls = new LiquidSlider(someElement,{
+        slideEaseFunction: 'popGoesTheWeasel'
+    });
+    
+    // Wait for it is now only available to this liquid slider instance.
+    ls.easing['waitForIt'] = 'cubic-bezier(1,.02,1,-0.16)';
+    ls.options.slideEaseFunction = 'waitForIt';    
+```
+
+```javascript
+    {
+    easeOutCubic: 'cubic-bezier(.215,.61,.355,1)',
+    easeInOutCubic: 'cubic-bezier(.645,.045,.355,1)',
+    easeInCirc: 'cubic-bezier(.6,.04,.98,.335)',
+    easeOutCirc: 'cubic-bezier(.075,.82,.165,1)',
+    easeInOutCirc: 'cubic-bezier(.785,.135,.15,.86)',
+    easeInExpo: 'cubic-bezier(.95,.05,.795,.035)',
+    easeOutExpo: 'cubic-bezier(.19,1,.22,1)',
+    easeInOutExpo: 'cubic-bezier(1,0,0,1)',
+    easeInQuad: 'cubic-bezier(.55,.085,.68,.53)',
+    easeOutQuad: 'cubic-bezier(.25,.46,.45,.94)',
+    easeInOutQuad: 'cubic-bezier(.455,.03,.515,.955)',
+    easeInQuart: 'cubic-bezier(.895,.03,.685,.22)',
+    easeOutQuart: 'cubic-bezier(.165,.84,.44,1)',
+    easeInOutQuart: 'cubic-bezier(.77,0,.175,1)',
+    easeInQuint: 'cubic-bezier(.755,.05,.855,.06)',
+    easeOutQuint: 'cubic-bezier(.23,1,.32,1)',
+    easeInOutQuint: 'cubic-bezier(.86,0,.07,1)',
+    easeInSine: 'cubic-bezier(.47,0,.745,.715)',
+    easeOutSine: 'cubic-bezier(.39,.575,.565,1)',
+    easeInOutSine: 'cubic-bezier(.445,.05,.55,.95)',
+    easeInBack: 'cubic-bezier(.6,-.28,.735,.045)',
+    easeOutBack: 'cubic-bezier(.175,.885,.32,1.275)',
+    easeInOutBack: 'cubic-bezier(.68,-.55,.265,1.55)'
+    }
+```
+
+```javascript
+autoHeight: true,  // Should the height be adjusted when the slides have different sizes?
+minHeight: 0,      // minimal height
+heightEaseDuration: 1500,   // Time it takes to adjust the height
+heightEaseFunction: 'easeInOutExpo', // Which method to use to adjust the height. See https://daneden.github.io/animate.css/ if you use animate.css
 
 slideEaseDuration: 1500,
 slideEaseFunction: 'easeInOutExpo',
@@ -173,7 +265,8 @@ callback: function() {},
 
 preloader: false,
 swipe: true,
-swipeArgs: undefined
+swipeArgs: undefined,
+removeGlobalNoJsMarker: true
 ```
 
 
