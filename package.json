@@ -1,6 +1,6 @@
 {
   "name": "@tschallacka/liquidslider",
-  "version": "3.0.00",
+  "version": "3.0.1",
   "description": "A node compatible Responsive Content Slider",
   "main": "./src/js/jquery.liquidslider.npm.js",
   "directories": {

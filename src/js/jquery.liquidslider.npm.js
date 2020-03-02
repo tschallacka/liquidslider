@@ -2,10 +2,10 @@
  *  Liquid Slider
  *  Copyright 2012 Kevin Batdorf
  *  http://liquidslider.com
- *  MIT license
+ *  MIT license(SEE LICENSE FILE)
  *  Updated version using foundation framework NPM friendly
- *  Copyright 2020 Michael Dibbets
- *  MIT license
+ *  Copyright 2020 Tschallacka
+ *  MIT license(SEE LICENSE FILE)
  */
 
 var $ = require('jquery');
