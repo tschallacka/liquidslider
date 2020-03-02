@@ -67,11 +67,17 @@
     <pre class="language-javascript"><code>var LiquidSlider = require('@tschallacka/liquidslider')</code></pre>
   </p>
   <p>
+    Liquid Slider uses a less file for it's styling. If you use less you can import it with 
+    <pre class="language-css"><code>@import './node_modules/@tschallacka/liquidslider/src/less/liquid-slider.less';</code></pre>
+    or if you prefer the compiled css you can do
+    <pre class="language-css"><code>@import './node_modules/@tschallacka/liquidslider/css/liquid-slider.css';</code></pre>
+  </p>
+  <p>
     When you compile your node.js script and include it in your rendering process you now have access to the global jQuery function <code class="language-javascript">$(element).liquidSlider()</code> just like the legacy version.<BR/>
     You can see node.js specific changes on <a href="./page3.npm.html">page 3</a>. Page 1 and 2 largely cover the "legacy" framework usage via jQuery plugin, but are good to go over the various options and possiblities in this slider.<BR/>
   </p>
-  <p>Then in your code, build a three-panel slider like this:</p>
-  <pre class="line-numbers language-javascript"><code>&lt;div class="liquid-slider" id="slider-id"&gt;
+  <p>Then in your code, build a three-panel slider like this: One wrapping container, then each slide in it's own wrapper within that outer wrapper. Within each slide wrapper an item marked with a <code class="language-html">title</code> class if you wish to use tabs.</p>
+  <pre class="line-numbers language-javascript"><code>&lt;div&gt;
      &lt;div&gt;
           &lt;h2 class="title"&gt;Slide 1&lt;/h2&gt;
           // Content goes here
