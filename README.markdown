@@ -13,7 +13,7 @@ It is considered in my repository as legacy, and will not be updated, nor will I
 It's only here for those who halfway upgrade to npm and can't for reasons update their code to use the npm version
 This plugin is written to be included in an index.js which is then compiled in the big javascript file served to the browser. There are no individual files to include except the legacy files(not recommended)
 
-[Example Page (Advanced)](/examples/page1.npm.html)
+[Read the documentation]https://tschallacka.github.io/node-liquidslider/)
 
 I'm on Twitter: [@Tschallacka](http://twitter.com/#!/tschallacka) and have a personal website [tschallacka.de](https://www.tschallacka.de), have an [imgur](https://imgur.com/user/tschallacka), [stackoverflow](https://stackoverflow.com/users/1356107/tschallacka), [reddit](http://reddit.com/u/tschallacka), [royalroad](https://www.royalroad.com/profile/94454) account. So enough ways to get in touch with me, it may even be a safe bet to assume that anyone you encounter with this username may be me. My email is tschallacka [a]t outlook d[ot] com.
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
   <meta name="description" content="Liquid Slider : A JQuery Slider Plugin">
-  <meta property="og:image" content="http://kevinbatdorf.github.io/liquidslider/examples/assets/fb.png"/>
+  <meta property="og:image" content="./examples/assets/tschallacka.png"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans|Montserrat|Lobster' rel='stylesheet' type='text/css'>
@@ -18,13 +18,13 @@
   <title>Liquid Slider Examples with node</title>
 </head>
 <body class='no-js'>
-  <h1 class="gradient"><a href="http://liquidslider.com">Liquid Slider Examples with node</a></h1>
+  <h1 class="gradient"><a href="https://tschallacka.github.io/node-liquidslider/">Liquid Slider Examples with node</a></h1>
 <div class="container">
-  <a class="link" href="http://liquidslider.com">Download Page</a>
+  <a class="link" href="https://tschallacka.github.io/node-liquidslider/">Download Page</a>
   <div class="message">
   <p>
     The below samples show some of the ways you can use the node JS implementation to seamlessly
-    integrate the liquid slide in your application
+    integrate the liquid slider in your application
   </p>
   </div>
   <div class="nav-area">
@@ -51,8 +51,8 @@
       <a class="pure-menu-heading">Page 3</a>
       <ul>
           <li><a href="#simple-node-slider">Simplest node Application</a></li>
-          <li><a href="#ajax">October Foundation</a></li>
-          <li><a href="#alternative-navigation">Ajax, but different</a></li>
+          <li><a href="#october-foundation">October Foundation</a></li>
+          <li><a href="#ajax">Ajax, but different</a></li>
           <li><a href="#binding-to-jquery">Binding to a second jQuery instance</a></li>
           <li><a href="#access-the-instance">Accessing the instance</a></li>
           <li><a href="#changing-the-easing">Changing the easing</a></li>
@@ -184,8 +184,41 @@ let $destroyable = $('#destroyable_from_npm');
   </p>
   <p>
     Any element you now tag with <code class="language-html">data-liquid-slider</code> will become initialized the
-    moment the <code class="language-javascript">"render"</code> event is triggered on the document.
+    moment the <code class="language-javascript">"render"</code> event is triggered on the document. The below small slider is built that way
   </p>
+  <p>
+    You can now also pass all the options of the liquid slider as data attribute options.
+    Any captial letter becomes a lower case letter with a dash in front of it.
+    <code class="language-javascript">slideEaseDuration:2500,</code> becomes 
+    <code class="language-html">data-slide-ease-duration="2500"</code>
+  </p>
+  <div data-liquid-slider data-slide-ease-duration="2500">
+    <div>
+        <h2 class="title">slide_1</h2>
+        <pre class="line-numbers language-javascript"><code>&lt;div data-liquid-slider data-slide-ease-duration="2500"&gt;
+    &lt;div&gt;
+        &lt;h2 class="title"&gt;slide_1&lt;/h2&gt;
+        test slide 1
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h2 class="title"&gt;slide_2&lt;/h2&gt;
+        test slide 2
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h2 class="title"&gt;slide_3&lt;/h2&gt;
+        test slide 3
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div>
+        <h2 class="title">slide_2</h2>
+        test slide_2
+    </div>
+    <div>
+        <h2 class="title">slide_3</h2>
+        test slide_3
+    </div>
+  </div>
   <p>
     The <code class="language-javascript">$(document).trigger("render")</code> 
     should be executed on page load at least to enable this functionality.<BR/>
@@ -261,12 +294,7 @@ $wiped.html(ajax_response_html_content).trigger('render');</code></pre>
     The only thing it won't do is remove the original content of the slider. It is up to you to actually 
     <code class="language-javascript">.remove()</code> it or replace it with new content.
   </p>
-  <p>
-    You can now also pass all the options of the liquid slider as data attribute options.
-    Any captial letter becomes a lower case letter with a dash in front of it.
-    <code class="language-javascript">slideEaseDuration:2500,</code> becomes 
-    <code class="language-html">data-slide-ease-duration="2500"</code>
-  </p>
+  
   <p>
     If you don't remove the element it may cause the element to be re-initialized when <code class="language-javascript">"render"</code> is called anew.
   </p>
@@ -522,7 +550,7 @@ ls.options.slideEaseFunction = 'popGoesTheWeasel';</code></pre>
     </a>
     <div class="info">
       <h2 class="title">upgrades by Tschallacka</h2>
-      <a href="https://twitter.com/tschallacka" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" data-dnt="true">Follow @kevinbatdorf</a>
+      <a href="https://twitter.com/tschallacka" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" data-dnt="true">Follow @tschallacka</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       <p>I improved the liquid slider made by Kevin Batdorf with some npm module functionality, that allows for cleanup of the module, better memory management and integration in a node js application.</p>
     </div>

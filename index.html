@@ -1,50 +1,203 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
-  <meta name="description" content="Liquid Slider : The Last Responsive Content Slider You'll Ever Need" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+  <meta name="description" content="Liquid Slider : A JQuery Slider Plugin">
+  <meta property="og:image" content="./examples/assets/tschallacka.png"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Optionally use Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans|Montserrat|Lobster' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.4.2/pure-min.css">
   <link rel="stylesheet" href="./css/liquid-slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css">
+  <link rel="stylesheet" href="./examples/assets/prism.css">
+  <link rel="stylesheet" href="./examples/assets/styles.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 
-  <title>Liquid Slider : The Last Responsive Content Slider You'll Ever Need</title>
+  <title>Liquid Slider with Node</title>
 </head>
-<body class="no-js">
-  <div id="main-slider" class="liquid-slider">
-    <div>
-      <h2 class="title">Slide 1</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus lectus. Maecenas tempor ornare sollicitudin.</p>
+<body class='no-js'>
+  <h1 class="gradient"><a href="https://tschallacka.github.io/node-liquidslider/">Liquid Slider Examples with Node</a></h1>
+<div class="container">
+  <section class="message">
+  Visit the <a href="https://github.com/tschallacka/node-liquidslider">github repository</a>
+  <p>
+    To install execute with npm.
+    <pre class="language-bash"><code>npm install @tschallacka/liquidslider</code></pre>
+  </p>
+  </p>  
+    In your index.js or other place in your node.js script add:
+    <pre class="language-javascript"><code>var LiquidSlider = require('@tschallacka/liquidslider')</code></pre>
+  </p>
+  <p>
+    Liquid Slider uses a less file for it's styling. If you use less you can import it with 
+    <pre class="language-css"><code>@import './node_modules/@tschallacka/liquidslider/src/less/liquid-slider.less';</code></pre>
+    or if you prefer the compiled css you can do
+    <pre class="language-css"><code>@import './node_modules/@tschallacka/liquidslider/css/liquid-slider.css';</code></pre>
+  </p>
+  <p>
+    For the legacy file instructions go to: <a href="./examples/page1.legacy.html">Legacy page 1</a>
+    For instructions how to use the Liquid Slider with node visit the below instructions, 
+    with page 3 going in more detail how to use it with node.
+  </p>
+  </section>
+  <section class="nav-area">
+    <div class="pure-menu pure-menu-open">
+      <a class="pure-menu-heading">Page 1</a>
+      <ul>
+          <li><a href="./examples/page1.npm.html#how-to-install">How To Install</a></li>
+          <li><a href="./examples/page1.npm.html#default-settings">Default Settings</a></li>
+          <li><a href="./examples/page1.npm.html#how-to-edit-settings">How To Edit Settings</a></li>
+          <li><a href="./examples/page1.npm.html#autoplay-and-transition-controls">Autoplay & Transition Controls</a></li>
+          <li><a href="./examples/page1.npm.html#advanced-controls">Advanced Controls</a></li>
+          <li><a href="./examples/page1.npm.html#hooks">Hooks</a></li>
+      </ul>
     </div>
-    <div>
-      <h2 class="title">Slide 2</h2>
-      <p>Proin nec turpis eget dolor dictum lacinia. Nullam nunc magna, tincidunt eu porta in, faucibus sed magna. Suspendisse laoreet ornare ullamcorper. Nulla in tortor nibh. Pellentesque sed est vitae odio vestibulum aliquet in nec leo.</p>
-    </div>          
-    <div>
-      <h2 class="title">Slide 3</h2>
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+    <div class="pure-menu pure-menu-open">
+      <a class="pure-menu-heading">Page 2</a>
+      <ul>
+          <li><a href="./examples/page2.npm.html#animate-css">Animate.css</a></li>
+          <li><a href="./examples/page2.npm.html#ajax">Ajax</a></li>
+          <li><a href="./examples/page2.npm.html#alternative-navigation">Alternative Navigation</a></li>
+      </ul>
     </div>
-    <div>
-      <h2 class="title">Slide 4</h2>
-      <p>Proin nec turpis eget dolor dictum lacinia. Nullam nunc magna, tincidunt eu porta in, faucibus sed magna. Suspendisse laoreet ornare ullamcorper. Nulla in tortor nibh. Pellentesque sed est vitae odio vestibulum aliquet in nec leo.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus lectus. Maecenas tempor ornare sollicitudin.</p>
+    <div class="pure-menu pure-menu-open">
+      <a class="pure-menu-heading">Page 3</a>
+      <ul>
+          <li><a href="./examples/page3.npm.html#simple-node-slider">Simplest node Application</a></li>
+          <li><a href="./examples/page3.npm.html#october-foundation">October Foundation</a></li>
+          <li><a href="./examples/page3.npm.html#ajax">Ajax, but different</a></li>
+          <li><a href="./examples/page3.npm.html#binding-to-jquery">Binding to a second jQuery instance</a></li>
+          <li><a href="./examples/page3.npm.html#access-the-instance">Accessing the instance</a></li>
+          <li><a href="./examples/page3.npm.html#changing-the-easing">Changing the easing</a></li>
+      </ul>
+    </div>
+    
+  </section>
+  <section id="quick-pointers">
+    <h2>
+      the documentation <a href="#quick-pointers">#</a>
+    </h2>
+    <p>
+      <a href="https://www.tschallacka.de" style="float: left;margin-right:10px;">
+        <img src="./examples/assets/tschallacka.png" style="width: 100px;height:auto;">
+      </a>
+      
+    <p>
+        Hey there, thanks for choosing for the liquid slider with Node JS integration.
+        This documentation consists of <a class="link" href="./examples/page1.legacy.html">legacy</a> and <a class="link" href="./examples/page3.npm.html">node js</a> implementation.<BR/>
+        If you really want to use the legacy you can do that, but I wouldn't recommend it, as it has some serious memory leaks.
+        Page 1 and 2 on the npm documentation largely use the "old" approach via the jQuery function. Page 3 covers the added features and new ways to work with it.<BR/>
+        
+  </p>
+  </section>
+  <h2>
+      quick snippets <a href="#quick-snippets">#</a>
+    </h2>
+  <section id="quick-snippets">
+    <div id="snippets">
+        <div>
+            <h2 class="title">quick usage</h2>
+            <pre class="line-numbers language-javascript"><code>let LiquidSlider = require('@tschallacka/liquidslider');
+let slide = new LiquidSlider($('#snippets'));</code></pre>
+        </div>
+        <div>
+            <h2 class="title">easing</h2>
+            Read the <A href="./examples/page3.npm.html#changing-the-easing">documentation</a>.
+            <pre class="line-numbers language-javascript"><code>let LiquidSlider = require('@tschallacka/liquidslider');
+LiquidSlider.EASING_FUNCTIONS['popGoesTheWeasel'] = 'cubic-bezier(1, -0.5, 0, 1.64)';
+let ls = new LiquidSlider($('#slider-easing'), {
+    slideEaseFunction: 'popGoesTheWeasel',  
+});</code></pre>
+        </div>
+        <div>
+            <h2 class="title">animate.css</h2>
+            Read the <A href="./examples/page2.npm.html#animate-css">documentation</a>.
+            <pre class="line-numbers language-javascript"><code>let slider = new LiquidSlider($element, {
+    autoHeight:true,
+    slideEaseFunction:'animate.css',// Set this to indicate that animate.css functions are used
+    slideEaseDuration:1000,
+    heightEaseDuration:1000,
+    animateIn:"rollIn", // define which animate.css functions to use
+    animateOut:"rollOut"     
+});</code></pre>
+        </div>
+        <div>
+            <h2 class="title">october founation</h2>
+            Read the <a href="./examples/page3.npm.html#october-foundation">documentation</a>
+            <pre class="line-numbers language-javascript"><code>&lt;div data-liquid-slider data-slide-ease-duration="2500"&gt;
+    &lt;div&gt;
+        &lt;h2 class="title"&gt;slide_1&lt;/h2&gt;
+        test slide 1
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h2 class="title"&gt;slide_2&lt;/h2&gt;
+        test slide 2
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h2 class="title"&gt;slide_3&lt;/h2&gt;
+        test slide 3
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+    </div>
+</section>
+<section id="why">
+  <h2>Why the change<a href="#why">#</a></h2>
+  <p>
+    I decided to upgrade liquid slider because it hasn't seen some overhaul for a long time, and I was running into out of memory errors if I left a page open that had a liquid slider for a while.<BR/>
+    Seeing the not so active repository I decided to update it myself and offer a pull request. But as I needed these changes now I decided to publish under my own namespace in the npm repository.
+  </p>
+  <p>
+    If you see any bugs, need new features, don't hesitate to open an issue on <a href="https://github.com/tschallacka/node-liquidslider/issues">the github repo</a>
+  <p>
+  <p>
+    In the process I also decided to integrate it in my existing toolset to enable easier cleanup of initialized instances. And since I'm lazy I didn't rewrite anything of it so that the liquid slider
+    can run as a standalone jquery plugin. This makes it so that you do need to include the liquid slider in your index.js and compile it with browserify or something similar 
+    to get access to the global jQuery function, which is more superfluos because you can simply directly instantiate the LiquidSlider as an object. <Br/>
+    But if you have a certain workflow, it may be easier to keep on working the "old" way.
+  </p>
+</section>
+<section id="technical">
+<h2>A bit technical<a href="#technical">#</a></h2>
+  <p>
+   This code has two licenses now. The MIT license for the code I wrote, and the MIT license for Kevin. You can find the licenses in the <a class="link" href="./LICENSE">LICENSE</a> file.<BR/>
+   If you wish to republish, etc.. you will need to add this license file to your distributed files.
+  </p>
+  <p>
+    If you see any bugs, need new features, don't hesitate to open an issue on <a href="https://github.com/tschallacka/node-liquidslider/issues">the github repo</a> or contribute to it with a pull request.<BR/>
+    If you do make a pull request, please also make an entry in the documentation and in the <a href="./src/js/jquery.liquidslider.npm.demo.js" class="link">/src/js/jquery.liquidslider.npm.demo.js</a> illustrating it in use.    
+  <p>
+  <p>
+    This makes use of the <a href="https://github.com/tschallacka/npm_oc.foundation.base" class="link">october foundation</a> for management of event, cleanup of variables and keeping the code clean. It uses the javascript prototype framework to make an object that can be instantiated.<BR/>
+    Feel free to use it in your own projects if you feel so inclined.
+  </p>
+</section>
+
+</div> <!-- End of container -->
+<footer class="site-footer" role="contentinfo">
+<div class="container">
+  <div class="profile">
+    <a class="circle-image-link" href="https://www.tschallacka.de" title="Tschallacka's website">
+      <img src="./examples/assets/tschallacka.png">
+    </a>
+    <div class="info">
+      <h2 class="title">upgrades by Tschallacka</h2>
+      <a href="https://twitter.com/tschallacka" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" data-dnt="true">Follow @tschallacka</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <p>I improved the liquid slider made by Kevin Batdorf with some npm module functionality, that allows for cleanup of the module, better memory management and integration in a node js application.</p>
     </div>
   </div>
-<footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
-  <script src="./js/jquery.liquid-slider.min.js"></script>  
-  <script>
-    /**
-     * If you need to access the internal property or methods, use this:
-     * var api = $.data( $('#main-slider')[0], 'liquidSlider');
-     * console.log(api);
-     */
-    $('#main-slider').liquidSlider();
-  </script>
+</div>
+
+<script src="./js/jquery.liquidslider.npm.demo.min.js"></script>
+<script src="./examples/assets/prism.js"></script>
 </footer>
+<script type="text/javascript">
+   
+    $('#snippets').liquidSlider();
+   
+</script>
 </body>
 </html>
