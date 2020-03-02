@@ -1,7 +1,7 @@
 {
   "name": "@tschallacka/liquidslider",
   "version": "3.0.1",
-  "description": "A node compatible Responsive Content Slider",
+  "description": "A Node compatible Responsive Content Slider",
   "main": "./src/js/jquery.liquidslider.npm.js",
   "directories": {
     "example": "examples"
@@ -33,7 +33,7 @@
   "bugs": {
     "url": "https://github.com/tschallacka/liquidslider/issues"
   },
-  "homepage": "https://www.tschallacka.de",
+  "homepage": "https://tschallacka.github.io/node-liquidslider/",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-transform-arrow-functions": "^7.8.3",
