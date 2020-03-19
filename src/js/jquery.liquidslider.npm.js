@@ -242,8 +242,7 @@ LiquidSlider.prototype.init = function()
   this.alloc('totalWidth', null);
   this.alloc('slideDistance', null);
   this.alloc('dynamicTabsElement', null);
-  this.alloc('easing', $.extend({}, LiquidSlider.EASING_FUNCTIONS));
-  
+  this.alloc('easing', $.extend({}, LiquidSlider.EASING_FUNCTIONS));  
   
   // jQuery or CSS3 ?
   this.determineAnimationType();
@@ -568,8 +567,9 @@ LiquidSlider.prototype.setNextPanel = function(direction)
   if (direction === this.nextPanel) return;
   
   this.prevPanel = this.nextPanel;
-
+  
   if (this.loaded) {
+	
     if (typeof direction === 'number') {
       this.nextPanel = direction;
     } else {
@@ -586,6 +586,7 @@ LiquidSlider.prototype.setNextPanel = function(direction)
     } else {
       this.verifyPanel();
     }
+	
   }
 };
 
@@ -1067,7 +1068,11 @@ LiquidSlider.prototype.alignNavigation = function()
 
 LiquidSlider.prototype.handleNavigationClick = function(e) {
     e.preventDefault();
+	clearTimeout(this.autoSlideTimeout);
     this.setNextPanel($.data(e.currentTarget, 'ls-nav-tab'));
+	if(this.options.autoSlide) {
+		this.startAutoSlide(true);
+	}
     return false;
 };
 /**
@@ -1159,10 +1164,14 @@ LiquidSlider.prototype.showArrow = function(arrow)
          .fadeTo(fadeIn, 1)
          .removeClass('ls-hidden');
 }
-LiquidSlider.prototype.onArrowClick = function(e) {
+LiquidSlider.prototype.onArrowClick = function(e) 
+{
   e.preventDefault();
-  
+  clearTimeout(this.autoSlideTimeout);
   this.setNextPanel($.data(e.currentTarget, 'ls-navigate'));
+  if(this.options.autoSlide) {
+    this.startAutoSlide(true);
+  }
   return false;
 }
 LiquidSlider.prototype.registerArrows = function() 

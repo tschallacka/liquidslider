@@ -173,14 +173,14 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus lectus. Maecenas tempor ornare sollicitudin.</p>
     </div>
   </div>
-  <button class="btn pure-button">Start</button> Speed: <input id="range-speed" type=range step=100 min=-5000 max=100 value=-1500> Delay: <input id="range-delay" type=range step=1000 min=-15000 max=100 value=-7000>
+  <button class="btn pure-button" id="start-autoslide-example-page1">Start</button> Speed: <input id="range-speed" type=range step=100 min=-5000 max=100 value=-1500> Delay: <input id="range-delay" type=range step=1000 min=-15000 max=100 value=-7000>
   <p>First, create a button and two sliders like this:</p>
   <pre class="line-numbers language-javascript"><code>&lt;button class="btn"&gt;A Pure Button&lt;/button&gt;
 &lt;input id="range-speed" type=range step=100 min=-5000 max=100 value=-1500&gt;
 &lt;input id="range-delay" type=range step=1000 min=-15000 max=100 value=-7000&gt;</code></pre>
   <p>Next, initialize the Liquid Slider, access the internal api, and add a function to control the auto play. Then update the variable settings. Optionally, you may set autoSlide to true and change "Stop" and "Start" accordingly.</p>
   <pre class="line-numbers language-javascript"><code>$('#slider-3').liquidSlider({/*autoSlide:true*/});
-$('.btn').on('click', function() {
+$('#start-autoslide-example-page1').on('click', function() {
   var api = $.data( $('#slider-3')[0], 'liquidSlider'),
       text = $(this).text() === 'Start' ? 'Stop' : 'Start';
   if (text === 'Stop')
@@ -318,8 +318,9 @@ $('#range-delay').change(function() {
   $('#slider-2').liquidSlider({continuous:false});
   $('#slider-3').liquidSlider({/*autoSlide:true*/});
   var api = $.data( $('#slider-3')[0], 'liquidSlider');
-  $('.btn').on('click', function() {
-      var text = $(this).text() === 'Start' ? 'Stop' : 'Start';
+  $('#start-autoslide-example-page1').on('click', function(e) {
+      var text = $(e.target).text() === 'Start' ? 'Stop' : 'Start';
+	  console.log(text);
       if (text === 'Stop')
         api.startAutoSlide();
       else
